@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulátor hydrostatického tlaku</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <h1>Výpočet hydrostatického tlaku</h1>
+    <form id="pressureForm" onsubmit="return false;">
+        <div class="input-group">
+            <label for="density">Hustota kapaliny (kg/m³):</label>
+            <input type="number" id="density" step="0.1" required>
+            <small>Např.: voda = 1000 kg/m³</small>
+        </div>
+        
+        <div class="input-group">
+            <label for="gravity">Tíhové zrychlení (m/s²):</label>
+            <input type="number" id="gravity" value="9.81" step="0.01" required>
+        </div>
+        
+        <div class="input-group">
+            <label for="height">Výška sloupce kapaliny (m):</label>
+            <input type="number" id="height" step="0.1" required>
+        </div>
+        
+        <button type="button" onclick="calculatePressure()">Vypočítat</button>
+    </form>
+
+    <div id="result">
+        <h3>Výsledek:</h3>
+        <p>Hydrostatický tlak: <span id="pressure"></span> Pa</p>
+        <p>Hydrostatický tlak: <span id="bar"></span> bar</p>
+    </div>
+    <div>
+        <p>Kdybyste potřebovali znát hustoty <a href="https://cs.wikipedia.org/wiki/Hustoty_l%C3%A1tek" 
+            target="_new">tady jsou</a></a></p>
+    </div>
+
+    <script src="script.js"></script>
+    
+</body>
+</html>

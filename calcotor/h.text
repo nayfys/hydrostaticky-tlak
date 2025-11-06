@@ -1,0 +1,26 @@
+function calculatePressure() {
+    // Get input values
+    const density = parseFloat(document.getElementById('density').value);
+    const gravity = parseFloat(document.getElementById('gravity').value);
+    const height = parseFloat(document.getElementById('height').value);
+
+    if (density <= 0 || gravity <= 0 || height <= 0) {
+        alert('Všechny hodnoty musí být větší než 0.');
+        return;
+    }
+
+  
+    const pascal = density * gravity * height;
+    
+
+    const Barr = pascal / 100000;
+
+
+    const resultDiv = document.getElementById('result');
+    const tlak = document.getElementById('pressure');
+    const tlakbar= document.getElementById('bar');
+
+    tlak.textContent = pascal.toFixed(2);
+    tlakbar.textContent = Barr.toFixed(4);
+    resultDiv.style.display = 'block';
+}
