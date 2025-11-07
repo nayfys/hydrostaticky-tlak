@@ -1,5 +1,5 @@
 function calculatePressure() {
-    // Get input values
+  
     const density = parseFloat(document.getElementById('density').value);
     const gravity = parseFloat(document.getElementById('gravity').value);
     const height = parseFloat(document.getElementById('height').value);
@@ -24,3 +24,4 @@ function calculatePressure() {
     tlakbar.textContent = Barr.toFixed(4);
     resultDiv.style.display = 'block';
 }
+
